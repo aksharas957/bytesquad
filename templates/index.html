@@ -1,15 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Flask Web App</title>
-        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Club Events</title>
+    <style>
+        body {
+            text-align: center;
+            padding: 20px;
+            background-color: #0077cc;
+            color: white;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            background: url('back.webp');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        section h2 {
+            font-size: 2rem;
+            margin-bottom: 40px;
+        }
+
+        .event {
+            background: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
+            color: white;
+            padding: 30px;
+            margin: 20px auto;
+            border-radius: 15px;
+            width: 80%;
+            max-width: 600px;
+            text-align: left;
+            backdrop-filter: blur(10px); /* Adds the "frosted glass" effect */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+            border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle border */
+            transition: all 0.3s ease;
+        }
+
+        .event:hover {
+            transform: translateY(-5px); /* Slight lift on hover */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Darker shadow for hover effect */
+        }
+
+        .event h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .event p {
+            font-size: 1rem;
+            margin: 10px 0;
+        }
+
+        footer p {
+            font-size: 1.2rem;
+            margin-top: 40px;
+            color: #ddd;
+        }
+
+        footer a {
+            color: #f0f0f0;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to ByteSquad!</h1>
-    <p>This is a simple web application built using Flask.</p>
-    <p>Welcome to ByteSquad</p>
+    <header>
+        <h1>Welcome to the ByteSquad Club Events Page</h1>
+    </header>
+
+    <section>
+        <h2>Upcoming Events</h2>
+
+        <article class="event">
+            <h3>Event 1: Monthly Club Meeting</h3>
+            <p><strong>Date:</strong> October 10, 2025</p>
+            <p><strong>Time:</strong> 7:00 PM - 8:00 PM</p>
+            <p><strong>Location:</strong> Clubhouse, 123 Main Street</p>
+            <p>Description: Join us for our monthly meeting where we discuss club plans, upcoming activities, and more.</p>
+        </article>
+
+        <article class="event">
+            <h3>Event 2: Charity Fundraiser</h3>
+            <p><strong>Date:</strong> October 15, 2025</p>
+            <p><strong>Time:</strong> 3:00 PM</p>
+            <p><strong>Location:</strong> Community Center, 456 Elm Street</p>
+            <p>Description: Help us raise funds for local charities. There will be music, food, and activities for all ages!</p>
+        </article>
+
+        <article class="event">
+            <h3>Event 3: Social Mixer</h3>
+            <p><strong>Date:</strong> October 20, 2025</p>
+            <p><strong>Time:</strong> 6:00 PM</p>
+            <p><strong>Location:</strong> Club Lounge, 789 Oak Avenue</p>
+            <p>Description: A casual evening for club members to relax, meet new people, and enjoy some drinks and appetizers.</p>
+        </article>
+    </section>
+
+    <footer>
+        <p>Contact us at <a href="mailto:info@club.com">info@club.com</a> for more information.</p>
+    </footer>
 </body>
 </html>
