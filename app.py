@@ -30,7 +30,7 @@ def fetch_data():
         conn = get_db_connection()
         cur = conn.cursor()
 
-        cur.execute('SELECT * FROM members LIMIT 10;')
+        cur.execute('SELECT * FROM members order by id LIMIT 10;')
         users = cur.fetchall()
         description = [desc[0] for desc in cur.description]
         cur.close()
