@@ -20,7 +20,7 @@ def get_db_connection():
     conn = psycopg2.connect(DB_URL)
     return conn
 
-@app.route('/data')
+@app.route('/aboutus')
 def fetch_data():
     conn = None
     results = None
