@@ -3,9 +3,10 @@ body {
     background-color: #94a8ff; 
     text-align: center;
     padding: 50px;
-        text-align: center;
-
+    text-align: center;
+    background-image: url("./images/back.webp");
 }
+
 
 h1 {
     color: black; 
