@@ -28,7 +28,7 @@
                 <thead>
                     <tr>
                         {% for col in column_names %}
-                            <th>{{ col }}</th>
+                            <th>{{ column_display_names.get(col, col)  }}</th>
                         {% endfor %}
                     </tr>
                 </thead>
