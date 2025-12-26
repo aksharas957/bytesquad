@@ -20,7 +20,7 @@ def get_db_connection():
     conn = psycopg2.connect(DB_URL)
     return conn
 
-@app.route('/data')
+@app.route('/aboutus')
 def fetch_data():
     conn = None
     results = None
@@ -34,9 +34,21 @@ def fetch_data():
         users = cur.fetchall()
         description = [desc[0] for desc in cur.description]
         cur.close()
+        column_names = ["member_id", "first_name", "last_name", "grade","school","club_position","member_start_date","member_end_date","active"]
 
+        column_display_names = {
+            "member_id": "Member ID",
+            "first_name": "First Name",
+            "last_name": "Last Name",
+            "grade": "Grade",
+            "school": "School",
+            "club_position": "Club Position",
+            "member_start_date": "Start Date",
+            "member_end_date": "End Date",
+            "active":"Active"
+        }
 
-        return render_template('table.html',column_names=description, results=users)
+        return render_template('table.html',column_names=column_names,column_display_names=column_display_names, results=users)
     except Exception as e:
         return jsonify({"error": str(e)})
     finally:
