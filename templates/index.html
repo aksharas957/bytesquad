@@ -3,115 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Club Events</title>
-    
+    <title>ByteSquad</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-
-    <div style="text-align:center;">
-        <a href="/aboutus" class="btn">Members</a>
-    </div>
     <style>
-        body {
-            text-align: center;
-            padding: 20px;
-            background-color: #ffffff;
-            color: rgb(16, 15, 15);
-            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-          
-}
-        
-        
         header h1 {
             font-size: 3rem;
             margin-bottom: 20px;
+            text-align: center;
         }
-
-        section h2 {
-            font-size: 2rem;
-            margin-bottom: 40px;
-        }
-
-        .event {
-            background: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
-            color: rgb(17, 14, 14);
-            padding: 30px;
-            margin: 20px auto;
-            border-radius: 15px;
-            width: 80%;
-            max-width: 600px;
-            text-align: left;
-            backdrop-filter: blur(10px); /* Adds the "frosted glass" effect */
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
-            border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle border */
-            transition: all 0.3s ease;
-        }
-
-        .event:hover {
-            transform: translateY(-5px); /* Slight lift on hover */
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Darker shadow for hover effect */
-        }
-
-        .event h3 {
-            font-size: 1.8rem;
-            margin-bottom: 10px;
-        }
-
-        .event p {
-            font-size: 1rem;
-            margin: 10px 0;
-        }
-
         footer p {
-            font-size: 1.2rem;
+            font-size: 1rem;
             margin-top: 40px;
-            color: #101010;
+            color: #555;
+            text-align: center;
         }
-
-        footer a {
+        h2 {
             color: #000000;
-            text-decoration: none;
+            text-align: center;
         }
-
-        footer a:hover {
-            text-decoration: underline;
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+        .container p {
+            line-height: 1.6;
+            margin-bottom: 16px;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Welcome to the ByteSquad Events Page</h1>
-    </header>
+    <nav class="navbar">
+        <img class="logo" src="{{ url_for('static', filename='images/logo.png') }}" alt="ByteSquad Logo">
+        <a href="/" class="active">Home</a>
+        <a href="/events">Events</a>
+        <a href="/aboutus">Members</a>
+    </nav>
 
-    <section>
-        <h2>Upcoming Events</h2>
+    <div class="main-content">
+        <header>
+            <h1>Welcome to ByteSquad</h1>
+        </header>
 
-        <article class="event">
-            <h3>Event 1: Scratch Session 1</h3>
-            <p><strong>Date:</strong> July 4, 2025</p>
-            <p><strong>Time:</strong> 9:00 AM - 11:00 AM</p>
-            <p><strong>Location:</strong> The Duck Club (IRWD), Riparian View, Irvine, CA</p>
-            <p>Description: Teaching kids coding in Scratch. Creating small games like Pong.</p>
-        </article>
+        <div class="container">
+            <h2>Welcome!</h2>
+            <p>At ByteSquad, it's not just about coding. It's about kids inspiring kids, building together, and discovering what's possible when imagination meets technology.</p>
 
-        <article class="event">
-            <h3>Event 2: Scratch Session 2</h3>
-            <p><strong>Date:</strong> September 7, 2025</p>
-            <p><strong>Time:</strong> 9:00 AM - 12:00 PM</p>
-            <p><strong>Location:</strong> 15500 Sand Canyon Ave, Irvine, CA 92618 Irvine Ranch Water District Community Meeting Room</p>
-            <p>Description: This session is a continuation of the first Scratch session. In this session, we learned how to create the game Tic Tac Toe on Scratch.</p>
-        </article>
+            <h2>Our Mission</h2>
+            <p>Through fun, interactive sessions using Scratch, we guide kids in creating their own games, stories, and simple apps. Our approach is hands-on and playful, making coding feel less like "schoolwork" and more like an adventure.</p>
 
-        <article class="event">
-            <h3>Event 3: Building Your Future in Tech Webinar</h3>
-            <p><strong>Date:</strong> November 1, 2025</p>
-            <p><strong>Time:</strong> 11:00 AM</p>
-            <p><strong>Location:</strong> Online</p>
-            <p>Description: Webinar with guest speaker Shannon Stack, who explained and answered questions about college and career paths in computer science.</p>
-        </article>
-    </section>
+            <h2>Our Organization</h2>
+            <p>SoCal Tamil Youth Leadership and Entrepreneurship
+                <a href="https://socaltamil.org/style-socal-youth-leadership-entrepreneurship/" target="_blank">(STYLE)</a>
+                is an initiative of the SoCal Tamil Organization that empowers middle school, high school, and college students through leadership development and entrepreneurial thinking. Since its launch in 2018, STYLE has supported youth-driven initiatives and programs, including the creation of the ByteSquad Coding Club, providing students with opportunities to develop technical skills, collaborate on projects, and grow as innovative leaders.
+            </p>
+        </div>
 
-    <footer>
-        <p>Contact us for more information.</p>
-    </footer>
+        <footer>
+            <p>Contact us for more information.</p>
+        </footer>
+    </div>
 </body>
 </html>
