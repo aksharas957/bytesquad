@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ByteSquad Events</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        section h2 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .event {
+            background: #ffffff;
+            color: rgb(17, 14, 14);
+            padding: 30px;
+            margin: 20px auto;
+            border-radius: 15px;
+            max-width: 640px;
+            text-align: left;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+            border: 1px solid #e0e4ff;
+            transition: all 0.3s ease;
+        }
+
+        .event:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+        }
+
+        .event h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #2b3a7f;
+        }
+
+        .event p {
+            font-size: 1rem;
+            margin: 6px 0;
+        }
+
+        footer p {
+            font-size: 1rem;
+            margin-top: 40px;
+            color: #555;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <img class="logo" src="{{ url_for('static', filename='images/logo.png') }}" alt="ByteSquad Logo">
+        <a href="/">Home</a>
+        <a href="/events" class="active">Events</a>
+        <a href="/aboutus">Members</a>
+    </nav>
+
+    <div class="main-content">
+        <header>
+            <h1>ByteSquad Events</h1>
+        </header>
+
+        <section>
+            <h2>Upcoming Events</h2>
+
+            <article class="event">
+                <h3>Event 1: Scratch Session 1</h3>
+                <p><strong>Date:</strong> July 4, 2025</p>
+                <p><strong>Time:</strong> 9:00 AM - 11:00 AM</p>
+                <p><strong>Location:</strong> The Duck Club (IRWD), Riparian View, Irvine, CA</p>
+                <p>Description: Teaching kids coding in Scratch. Creating small games like Pong.</p>
+            </article>
+
+            <article class="event">
+                <h3>Event 2: Scratch Session 2</h3>
+                <p><strong>Date:</strong> September 7, 2025</p>
+                <p><strong>Time:</strong> 9:00 AM - 12:00 PM</p>
+                <p><strong>Location:</strong> 15500 Sand Canyon Ave, Irvine, CA 92618 Irvine Ranch Water District Community Meeting Room</p>
+                <p>Description: A continuation of the first Scratch session — creating Tic Tac Toe on Scratch.</p>
+            </article>
+
+            <article class="event">
+                <h3>Event 3: Building Your Future in Tech Webinar</h3>
+                <p><strong>Date:</strong> November 1, 2025</p>
+                <p><strong>Time:</strong> 11:00 AM</p>
+                <p><strong>Location:</strong> Online</p>
+                <p>Description: Webinar with guest speaker Shannon Stack on college and career paths in computer science.</p>
+            </article>
+        </section>
+
+        <footer>
+            <p>Contact us for more information.</p>
+        </footer>
+    </div>
+</body>
+</html>
