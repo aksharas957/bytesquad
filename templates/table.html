@@ -1,128 +1,110 @@
 <!DOCTYPE html>
-<html>
-<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-
-    <div style="text-align:center;">
-        <a href="/" class="btn">Events Page</a>
-    </div>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ByteSquad Members</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <style>
-        table { border-collapse: collapse; width: 60%; margin: 20px auto; font-family: Arial; }
-        th, td { border: 1px solid #efefef; padding: 8px; text-align: center; white-space: nowrap;}
-        th {    background-color: #94a8ff;}
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        h1, h2 {
+            color: #000000;
+            text-align: center;
+        }
+
+        .container p {
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            max-width: 900px;
+            margin: 20px auto;
+            font-family: Arial, sans-serif;
+        }
+
+        th, td {
+            border: 1px solid #efefef;
+            padding: 8px;
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        th {
+            background-color: #94a8ff;
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 40px;
+        }
     </style>
 </head>
 <body>
-    <header>
-      <h1>About Us</h1>
-    </header>
+    <nav class="navbar">
+        <img class="logo" src="{{ url_for('static', filename='images/logo.png') }}" alt="ByteSquad Logo">
+        <a href="/">Home</a>
+        <a href="/events">Events</a>
+        <a href="/aboutus" class="active">Members</a>
+    </nav>
 
-  <div class="container">
-    <h2>Welcome!</h2>
-    <p>At ByteSquad, it’s not just about coding. It’s about kids inspiring kids, building together, and discovering what’s possible when imagination meets technology.</p>
+    <div class="main-content">
+        <header>
+            <h1>About Us</h1>
+        </header>
 
-    <h2>Our Mission</h2>
-    <p>Through fun, interactive sessions using Scratch, we guide kids in creating their own games, stories, and simple apps. Our approach is hands-on and playful, making coding feel less like “schoolwork” and more like an adventure</p>
+        <div class="container">
+            <h2>Welcome!</h2>
+            <p>At ByteSquad, it's not just about coding. It's about kids inspiring kids, building together, and discovering what's possible when imagination meets technology.</p>
 
-    <h2>Our Organization</h2>
-    <p>SoCal Tamil Youth Leadership and Entrepreneurship 
-      <a href="https://socaltamil.org/style-socal-youth-leadership-entrepreneurship/" target="_blank"> (STYLE)</a> is an initiative of the SoCal Tamil Organization that empowers middle school, high school, and college students through leadership development and entrepreneurial thinking. Since its launch in 2018, STYLE has supported youth-driven initiatives and programs, including the creation of the ByteSquad Coding Club, providing students with opportunities to develop technical skills, collaborate on projects, and grow as innovative leaders. This success has been made possible through the continued support of students, parents, and the community.</p>
-  </div>
-    <header>
-      <h1 style="text-align:center;">Member Info Table</h1>
-    </header>
-    {% if results %}
-            <table>
-                <thead>
+            <h2>Our Mission</h2>
+            <p>Through fun, interactive sessions using Scratch, we guide kids in creating their own games, stories, and simple apps. Our approach is hands-on and playful, making coding feel less like "schoolwork" and more like an adventure.</p>
+
+            <h2>Our Organization</h2>
+            <p>SoCal Tamil Youth Leadership and Entrepreneurship
+                <a href="https://socaltamil.org/style-socal-youth-leadership-entrepreneurship/" target="_blank">(STYLE)</a>
+                is an initiative of the SoCal Tamil Organization that empowers middle school, high school, and college students through leadership development and entrepreneurial thinking. Since its launch in 2018, STYLE has supported youth-driven initiatives and programs, including the creation of the ByteSquad Coding Club, providing students with opportunities to develop technical skills, collaborate on projects, and grow as innovative leaders.
+            </p>
+        </div>
+
+        <h1>Member Info Table</h1>
+
+        {% if results %}
+        <table>
+            <thead>
+                <tr>
+                    {% for col in column_names %}
+                        <th>{{ column_display_names.get(col, col) }}</th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in results %}
                     <tr>
-                        {% for col in column_names %}
-                            <th>{{ column_display_names.get(col, col)  }}</th>
+                        {% for cell in row %}
+                            <td>{{ cell }}</td>
                         {% endfor %}
                     </tr>
-                </thead>
-                <tbody>
-                    {% for row in results %}
-                        <tr>
-                            {% for cell in row %}
-                                <td>{{ cell }}</td>
-                            {% endfor %}
-                        </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
-            {% else %}
-                <p>No records found.</p>
-            {% endif %}
-    <h5>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+            <p style="text-align:center;">No records found.</p>
+        {% endif %}
 
-    </h5>
-    <style>
-        footer {
-            background-color: #2c3e50;
-            color: white;
-            text-align: center;
-            padding: 15px;
-            margin-top: 40px;
-            border-radius: 0px;
-        }
-    </style>
-</body>
-</html>
-       
-</style>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>About Us</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      margin: 0;
-      padding: 0;
-      background-color: #f8f8f6;
-      color: #333;
-    
-    }
-    header {
-      background-color: #94a8ff;
-      color: rgb(0, 0, 0);
-      padding: 20px 0;
-      text-align: center;
-      border-radius: 20px;
-      margin: 20px;
-    }
-    .container {
-      max-width: 900px;
-      margin: 30px auto;
-      padding: 0 20px;
-    }
-    h1, h2 {
-      color: #000000;
-    }
-    footer {
-      background-color: #222;
-      color: white;
-      text-align: center;
-      padding: 10px 0;
-      margin-top: 50px;
-    }
-  </style>
-</head>
-<body>
-
-
-    </style>
-<body>
-
-    <style>
-        footer {
-            background-color: #2c3e50;
-            color: white;
-            text-align: center;
-            padding: 15px;
-            margin-top: 40px;
-            border-radius: 0px;
-        }
-    </style>
+        <footer>
+            <p>Contact us for more information.</p>
+        </footer>
+    </div>
 </body>
 </html>
